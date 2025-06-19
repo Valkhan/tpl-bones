@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Produtos - T ONZE | Estilo Premium</title>
+    <meta name="description" content="Conheça toda a coleção T ONZE - Bonés premium com design exclusivo e qualidade incomparável.">
+    <meta name="keywords" content="bonés premium, T ONZE, coleção, galeria produtos">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        .gallery-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+        }
+        
+        .gallery-header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .gallery-header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 60px 0;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+        
+        .product-image {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+        
+        .product-description {
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        .product-features {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        
+        .product-features li {
+            padding: 0.3rem 0;
+            color: #34495e;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .product-features li i {
+            margin-right: 0.5rem;
+            color: #27ae60;
+            width: 16px;
+        }
+        
+        .btn-product {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            text-align: center;
+            transition: transform 0.2s ease;
+            display: block;
+        }
+        
+        .btn-product:hover {
+            transform: scale(1.05);
+            color: white;
+        }
+        
+        .nav-link.active {
+            color: #667eea !important;
+        }
+        
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .back-home:hover {
+            color: #764ba2;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">T ONZE</a>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="index.html#features" class="nav-link">Características</a></li>
+                    <li><a href="galeria.html" class="nav-link active">Galeria</a></li>
+                    <li><a href="index.html#preorder" class="nav-link">Pré-venda</a></li>
+                </ul>
+                <a href="index.html#preorder" class="header-cta">Comprar Agora</a>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Gallery Header -->
+    <section class="gallery-header">
+        <div class="container">
+            <h1>Nossa Coleção</h1>
+            <p>Descubra todos os nossos produtos premium com design exclusivo e qualidade incomparável</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <a href="index.html" class="back-home">
+                <i class="fas fa-arrow-left"></i>
+                Voltar ao Início
+            </a>
+            
+            <div class="products-grid">
+                <!-- Produto 1 -->
+                <div class="product-card scroll-animate">
+                    <div class="product-image" style="background-image: url('img/Imagem do WhatsApp de 2025-06-19 à(s) 15.17.26_c4bf92af.jpg')">
+                        <div class="product-badge">Novo</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">T ONZE Classic Black</h3>
+                        <p class="product-description">Boné premium em preto clássico, perfeito para qualquer ocasião. Design atemporal com acabamento de alta qualidade.</p>
+                        <div class="product-price">R$ 199,90</div>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Material premium</li>
+                            <li><i class="fas fa-check"></i> Ajuste ergonômico</li>
+                            <li><i class="fas fa-check"></i> Resistente ao suor</li>
+                            <li><i class="fas fa-check"></i> Design exclusivo</li>
+                        </ul>
+                        <a href="#" class="btn-product">
+                            <i class="fas fa-shopping-cart"></i>
+                            Comprar Agora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="product-card scroll-animate">
+                    <div class="product-image" style="background-image: url('img/Imagem do WhatsApp de 2025-06-19 à(s) 15.17.26_cb1bb060.jpg')">
+                        <div class="product-badge">Bestseller</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">T ONZE Urban Style</h3>
+                        <p class="product-description">Estilo urbano moderno com detalhes únicos. Ideal para quem busca se destacar na multidão com autenticidade.</p>
+                        <div class="product-price">R$ 229,90</div>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Design urbano exclusivo</li>
+                            <li><i class="fas fa-check"></i> Tecido respirável</li>
+                            <li><i class="fas fa-check"></i> Proteção UV50+</li>
+                            <li><i class="fas fa-check"></i> Ajuste personalizado</li>
+                        </ul>
+                        <a href="#" class="btn-product">
+                            <i class="fas fa-shopping-cart"></i>
+                            Comprar Agora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="product-card scroll-animate">
+                    <div class="product-image" style="background-image: url('img/Imagem do WhatsApp de 2025-06-19 à(s) 15.17.26_f77f704a.jpg')">
+                        <div class="product-badge">Limitado</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">T ONZE Sport Edition</h3>
+                        <p class="product-description">Edição especial para esportes com tecnologia avançada. Máximo conforto e performance para suas atividades.</p>
+                        <div class="product-price">R$ 269,90</div>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Tecnologia DRY-FIT</li>
+                            <li><i class="fas fa-check"></i> Ultra leve</li>
+                            <li><i class="fas fa-check"></i> Ventilação superior</li>
+                            <li><i class="fas fa-check"></i> Resistente à água</li>
+                        </ul>
+                        <a href="#" class="btn-product">
+                            <i class="fas fa-shopping-cart"></i>
+                            Comprar Agora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Produto 4 -->
+                <div class="product-card scroll-animate">
+                    <div class="product-image" style="background-image: url('img/Imagem do WhatsApp de 2025-06-19 à(s) 15.17.27_c144160f.jpg')">
+                        <div class="product-badge">Premium</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">T ONZE Signature</h3>
+                        <p class="product-description">Nossa linha signature com materiais de primeira qualidade. O que há de melhor em design e funcionalidade.</p>
+                        <div class="product-price">R$ 299,90</div>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Materiais premium</li>
+                            <li><i class="fas fa-check"></i> Edição limitada</li>
+                            <li><i class="fas fa-check"></i> Bordado exclusivo</li>
+                            <li><i class="fas fa-check"></i> Garantia estendida</li>
+                        </ul>
+                        <a href="#" class="btn-product">
+                            <i class="fas fa-shopping-cart"></i>
+                            Comprar Agora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Produto 5 -->
+                <div class="product-card scroll-animate">
+                    <div class="product-image" style="background-image: url('img/Imagem do WhatsApp de 2025-06-19 à(s) 15.17.27_dd78c2b0.jpg')">
+                        <div class="product-badge">Exclusivo</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">T ONZE Street Culture</h3>
+                        <p class="product-description">Celebre a cultura de rua com estilo único. Design inspirado na diversidade urbana e na expressão pessoal.</p>
+                        <div class="product-price">R$ 249,90</div>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Design street art</li>
+                            <li><i class="fas fa-check"></i> Cores vibrantes</li>
+                            <li><i class="fas fa-check"></i> Conforto total</li>
+                            <li><i class="fas fa-check"></i> Estilo autêntico</li>
+                        </ul>
+                        <a href="#" class="btn-product">
+                            <i class="fas fa-shopping-cart"></i>
+                            Comprar Agora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
