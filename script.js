@@ -260,17 +260,18 @@ function initCadastroModal() {
     const modalClose = document.getElementById('modalClose');
     const cadastroForm = document.getElementById('cadastroForm');
     
-    // Botões que abrem o modal
-    const triggerButtons = document.querySelectorAll('.btn-primary');
+    if (!modal || !modalClose || !cadastroForm) {
+        return; // Exit if elements don't exist
+    }
+      // Botões que abrem o modal - apenas botões específicos
+    const triggerButtons = document.querySelectorAll('[data-modal="newsletter"], .btn-newsletter, .btn-newsletter-footer');
     
-    // Abrir modal
+    // Abrir modal apenas para botões específicos
     triggerButtons.forEach(button => {
-        if (button.textContent.includes('Garantir') || button.textContent.includes('Pré-venda')) {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                openModal();
-            });
-        }
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            openModal();
+        });
     });
     
     // Fechar modal
@@ -299,11 +300,6 @@ function initCadastroModal() {
     function openModal() {
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
-        
-        // Animação de entrada
-        setTimeout(() => {
-            modal.querySelector('.modal-content').style.animation = 'slideInUp 0.4s ease';
-        }, 10);
     }
     
     function closeModal() {
